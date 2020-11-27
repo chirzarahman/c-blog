@@ -43,6 +43,7 @@
 @media (min-width: 992px) {
     .content {
         width: 60%;
+        text-align: center;
     }
     .title {
         font-size: 84px;
