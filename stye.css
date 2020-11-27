@@ -28,24 +28,26 @@
             }
 
             .content {
-                width: 60%;
+                width: 80%;
                 text-align: center;
             }
 
             .title {
-                font-size: 84px;
+                font-size: 42px;
             }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
+            .text {
+                font-size: 14px;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
+@media (min-width: 992px) {
+    .content {
+        width: 60%;
+    }
+    .title {
+        font-size: 84px;
+    }
+    .m-b-md {
+        margin-bottom: 30px;
+    }
+}
