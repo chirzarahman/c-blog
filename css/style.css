@@ -1,53 +1,46 @@
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+}
 
-            .full-height {
-                height: 100vh;
-            }
+.content {
+    width: 100%;
+    margin-top: 90px;
+}
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+.about-me {
+    width: 90%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
 
-            .position-ref {
-                position: relative;
-            }
+.name h1 {
+    font-size: 35px;
+}
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 10px;
-            }
+.description p {
+    font-size: 12px;
+}
 
-            .content {
-                width: 100%;
-                text-align: center;
-            }
-
-            .title {
-                font-size: 42px;
-            }
-
-            .text {
-                font-size: 14px;
-            }
+.list-korupsi li::marker {
+  font-size: 30px;
+}
 
 @media (min-width: 992px) {
-    .content {
-        width: 60%;
+    .about-me {
+        width: 50%;
     }
-    .title {
-        font-size: 84px;
+
+    .name h1 {
+        font-size: 50px;
     }
-    .m-b-md {
-        margin-bottom: 30px;
+
+    .description p {
+        font-size: 16px;
     }
 }
