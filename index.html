@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>C-Blog</title>
-    <link rel="icon" href="/assets/image/c-blog.svg" type="image/x-icon">
+    <link rel="icon" href="assets/image/c-blog.svg" type="image/x-icon">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <div class="container">
             <a class="navbar-brand fw-semibold" href="/">
                 <div class="d-inline-flex align-items-center">
-                    <img src="/assets/image/c-blog.svg" alt="Logo" width="25" height="25">
+                    <img src="assets/image/c-blog.svg" alt="Logo" width="25" height="25">
                     <span class="fw-semibold ps-3">C-Blog</span>
                 </div>
             </a>
@@ -30,24 +30,24 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <div class="ms-auto navbar-nav">
                     <a href="/" class="p-2 fw-medium text-decoration-none">Home</a>
-                    <a href="/pages/code.html" class="p-2 fw-medium text-decoration-none">Code</a>
-                    <a href="/pages/archive.html" class="p-2 fw-medium text-decoration-none">Archive</a>
+                    <a href="pages/code.html" class="p-2 fw-medium text-decoration-none">Code</a>
+                    <a href="pages/archive.html" class="p-2 fw-medium text-decoration-none">Archive</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section>
-        <div class="container vh-100">
-            <div class="row h-75 align-items-center">
-                <div class="col-md-6">
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
                     <h1 class="txt-home animate__animated animate__slideInLeft">Lorem ipsum dolor sit amet</h1>
                     <p class="text-body-secondary fw-normal txt-home animate__animated animate__slideInLeft">Lorem ipsum dolor sit amet consectetur. Risus
                         etiam quis amet adipiscing magnis cum urna senectus
                         quis. Feugiat euismod suscipit consectetur eget et massa donec faucibus. Ultricies pellentesque
                         vitae congue quisque ac imperdiet magnis libero nam.</p>
                     <div class="animate__animated animate__slideInLeft">
-                        <a href="/pages/code.html" class="btn btn-primary" role="button">Chapter Code</a>
+                        <a href="pages/code.html" class="btn btn-primary" role="button">Chapter Code</a>
                         <a href="https://roadmap.sh/" target="_blank" class="btn btn-outline-primary" role="button">
                             <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="currentColor"
                                 viewBox="0 -960 960 960">
@@ -58,19 +58,12 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6 animate__animated animate__slideInRight">
-                    <img src="/assets/image/Asset.svg" alt="img">
+                <div class="col-lg-6 animate__animated animate__slideInRight image-hero">
+                    <img src="assets/image/hero.svg" alt="img-hero">
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="bg-tertiary text-center text-lg-start">
-        <div class="text-center p-3 fw-medium" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 Copyright
-            <span class="text-dark">Create with ❤️</span>
-        </div>
-    </footer>
 </body>
 
 
