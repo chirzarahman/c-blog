@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/base16/one-light.min.css" />
+
+    <title>Netbeans Toko Kelontong</title>
+    <link rel="icon" href="../../assets/image/c-blog.svg" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="/">
+                <div class="d-inline-flex align-items-center">
+                    <img src="../../assets/image/c-blog.svg" alt="Logo" width="25" height="25">
+                    <span class="fw-semibold ps-3">C-Blog</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <div class="ms-auto navbar-nav">
+                    <a href="/" class="p-2 fw-medium text-decoration-none">Home</a>
+                    <a href="code.html" class="p-2 fw-medium text-decoration-none">Code</a>
+                    <a href="archive.html" class="p-2 fw-medium text-decoration-none">Archive</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container d-flex justify-content-center mt-5">
+        <div class="content-code">
+            <h1>Tutorial membuat program Toko Kelontong dengan Netbeans</h1>
+            <div class="d-flex align-items-center justify-content-between text-body-tertiary my-4">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="currentColor"
+                        viewBox="0 -960 960 960">
+                        <path
+                            d="M483-120q-75 0-141-28.5T226.5-226q-49.5-49-78-115T120-482q0-75 28.5-140t78-113.5Q276-784 342-812t141-28q80 0 151.5 35T758-709v-106h60v208H609v-60h105q-44-51-103.5-82T483-780q-125 0-214 85.5T180-485q0 127 88 216t215 89q125 0 211-88t86-213h60q0 150-104 255.5T483-120Zm122-197L451-469v-214h60v189l137 134-43 43Z" />
+                    </svg>
+                    <span class="mx-2 fw-medium">13-07-2022</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="17" width="17" fill="currentColor"
+                        viewBox="0 -960 960 960">
+                        <path
+                            d="M559-97q-18 18-43.5 18T472-97L97-472q-10-10-13.5-21T80-516v-304q0-26 17-43t43-17h304q12 0 24 3.5t22 13.5l373 373q19 19 19 44.5T863-401L559-97ZM245-664q21 0 36.5-15.5T297-716q0-21-15.5-36.5T245-768q-21 0-36.5 15.5T193-716q0 21 15.5 36.5T245-664Z" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-typed">Typed by </span><span class="fw-medium">Chirza Rahman</span>
+                </div>
+            </div>
+            <hr class="mb-4">
+
+            <div class="text-body-secondary">
+                <p>Pada kesempatan kali ini saya akan membahas bagaimana cara membuat kode
+                    pemrograman menggunakan
+                    pemrograman berbasis objek yaitu java netbeans.
+                    Kita akan membuat Program Toko Kelontong yang dapat input barang dari user dan menyediakan menu
+                    kasir
+                    dengan alur pemrograman sebagai berikut.</p>
+                <p>jika anda belum install dan belum download software JDK 8 dan NetBeans 2.8 silahkan download di link
+                    berikut lalu install, karena pada dasarnya syarat dapat di install neatbeans harus sudah terinstall
+                    JDK
+                    :</p>
+                <ul class="list-unstyled">
+                    <li>Download : <a target="_blank"
+                            href="https://www.oracle.com/id/java/technologies/downloads/#jdk20-windows"
+                            class="text-decoration-none">JDK</a></li>
+                    <li>Download : <a target="_blank" href="https://netbeans.apache.org/download/nb18/"
+                            class="text-decoration-none">Netbeans</a></li>
+                </ul>
+                <p>Setelah software diatas terinstal buka NeatBeans, ikuti langkah langkah dibawah ini</p>
+                <h3>Membuat Project baru</h3>
+                <p>dengan langkah sebagai berikut,</p>
+                <img src="../../assets/image/tokoKelontong/1.png" alt="tokoKelontong1" class="img-thumbnail mb-4">
+                <p>Buat project mu, dengan menggunakan tipe java application, setelah itu next,</p>
+                <img src="../../assets/image/tokoKelontong/2.png" alt="tokoKelontong1" class="img-thumbnail mb-4">
+                <p>Atur nama project yang kamu inginkan</p>
+                <h3>Java Class Model</h3>
+                <p>Pertama kita harus membuat Class Model. Mengapa ? karena didalam kelas model nya itu sendiri akan
+                    mendaftarkan apa aja nanti yang akan digunakan.</p>
+                <p>Contohnya pada kasus ini kita akan membuat program toko kelontong dimana kita mempunyai Class Model
+                    yang terdiri dari 3 member variable yg diisi pada waktu object nantinya diinstansiasi(diisi pada
+                    konstruktor). :</p>
+                <ul class="list-group-numbered bg-body-tertiary py-2 border rounded-1">
+                    <li class="list-group-item">Nama Barang (String) ==> saya singkat menjadi “nm”</li>
+                    <li class="list-group-item">Harga Barang (int) ==> saya singkat menjadi “hg”</li>
+                    <li class="list-group-item">Stok Barang (int) ==> dengan nama tetap “stok”</li>
+                </ul>
+                <img src="../../assets/image/tokoKelontong/3.png" alt="tokoKelontong1" class="img-thumbnail mb-4">
+                <p>Setelah itu Klik kanan com.mycompany.tokokelontong pilih “new” pilih lagi “Java Class” seperti gambar
+                    berikut.</p>
+                <img src="../../assets/image/tokoKelontong/4.png" alt="tokoKelontong1" class="img-thumbnail mb-4">
+                <p>Buatlah “Java Class” dengan nama “Model” Perlu DIINGAT KAPITALISASI NAMANYA!</p>
+                <p>di class Model nya codingnya seperti ini</p>
+                <pre class="border"><code class="language-java">public class Model {
+
+    String nm;
+    int hg;
+    int stok;
+
+    public Model(String nm, int hg, int stok) {
+        this.nm = nm;
+        this.hg = hg;
+        this.stok = stok;
+    }
+
+    public Model() {
+    }
+
+    /**
+     * @return the nm
+     */
+    public String getNm() {
+        return nm;
+    }
+
+    /**
+     * @return the hg
+     */
+    public int getHg() {
+        return hg;
+    }
+
+    /**
+     * @param nm the nm to set
+     */
+    public void setNm(String nm) {
+        this.nm = nm;
+    }
+
+    /**
+     * @param hg the hg to set
+     */
+    public void setHg(int hg) {
+        this.hg = hg;
+    }
+
+    /**
+     * @return the stok
+     */
+    public int getStok() {
+        return stok;
+    }
+
+    /**
+     * @param stok the stok to set
+     */
+    public void setStok(int stok) {
+        this.stok = stok;
+    }
+}</code></pre>
+
+                <p class="mt-3">Method set digunakan untuk mengisi data ke dalam object ArrayList, sedangkan get
+                    digunakan untuk menampilkan data</p>
+                <span>Informasi lengkap : <a target="_blank" href="https://www.petanikode.com/java-array/"
+                        class="text-decoration-none">Array</a></span>
+                <h3 class="my-4">Java Class Program</h3>
+                <p>Sebelumnya kita harus import</p>
+                <pre class="border my-4"><code class="language-java">import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Scanner;</code></pre>
+                <p>dan kita beri code pada public class TokoKelontong, seperti dibawah ini :</p>
+                <pre class="border my-4"><code class="language-java">static ArrayList&lt;Model&gt; lst;</code></pre>
+                <p class="my-4">Didalam Class Program marilah kita membuat beberapa Fungsi yang bertujuan efisiensi
+                    koding sebab
+                    dengan adanya fungsi kita tinggal memanggil fungsi tersebut, misal fungsi “main” manggilnya
+                    “main();”.</p>
+                <span class="fw-medium">1. Fungsi menu</span>
+                <p>kegunaan dari fungsi menu ini adalah menu dimana user ingin input barang, mencari data barang
+                    yang sudah diinput, kasir(sebagai perhitungan saat transaksi), ataupun stop(menghentikan
+                    program).</p>
+                <div class="alert alert-primary p-2" role="alert">
+                    <div class="ms-2">
+                        Note : Program menu ini menggunakan Switch Case
+                    </div>
+                </div>
+                <pre class="border my-4"><code class="language-java">//Function Menu
+static void menu() throws AWTException {
+    Scanner input = new Scanner(System.in);
+    shortline();
+    System.out.println("\t----- MENU -----");
+    shortline();
+    System.out.println("1. Input Barang");
+    System.out.println("2. Menampilkan Data Barang");
+    System.out.println("3. Membeli Barang");
+    System.out.println("4. Exit");
+    System.out.print("Masukkan Pilihan : ");
+    int pilihan = input.nextInt();
+    switch (pilihan) {
+        case 1: {
+            clear();
+            input();
+        }
+        break;
+        case 2: {
+            clear();
+            datasearch();
+        }
+        break;
+        case 3: {
+            clear();
+            buy();
+        }
+        break;
+        case 4: {
+            stop();
+        }
+    }
+}</code></pre>
+                <span class="fw-medium">2. Fungsi input</span>
+                <p>Kegunaan dari fungsi ini ialah user dapat menginputkan barang sesuai dengan keinginan
+                    (didaftarkan pada arraylist), dimana data yang sudah di input dapat dimunculkan saat user memilih
+                    menu "Menampilkan Data Barang".
+                </p>
+                <pre class="border my-4"><code class="language-java">//Function Input Barang
+static void input() throws AWTException {
+    Scanner input = new Scanner(System.in).useDelimiter("\n");
+    shortline();
+    System.out.println("\tINPUT BARANG");
+    shortline();
+    System.out.print("Masukkan banyak barang = ");
+    int data = input.nextInt();
+    for (int a = 1; a <= data; a++) {
+        Model barang = new Model();
+        shortline();
+        System.out.println("\tBARANG KE-" + a + "");
+        System.out.print("Masukkan Nama Barang = ");
+        barang.setNm(input.next());
+        System.out.print("Masukkan Harga Barang = Rp. ");
+        barang.setHg(input.nextInt());
+        System.out.print("Masukkan Stok Barang = ");
+        barang.setStok(input.nextInt());
+        lst.add(barang);
+    }
+    longline();
+    longline();
+    repeatinput();
+}</code></pre>
+                <span class="fw-medium">3. Fungsi datasearch</span>
+                <p>didalam fungsi datasearch ini digunakan untuk mempermudah user saat mencari barang yang sudah diinput
+                    sebelumnya.</p>
+                <pre class="border my-4"><code class="language-java">//Function Pencarian Barang
+static void datasearch() throws AWTException {
+    longline();
+    System.out.println("\tSELAMAT DATANG DI TOKO KELONTONG");
+    longline();
+    Scanner input = new Scanner(System.in).useDelimiter("\n");
+    int tandaADA = 0;
+    int datake = 0;
+    System.out.print("Masukan Nama Barang : ");
+    String nm = input.next();
+    for (int i = 0; i < lst.size(); i++) {
+        if (lst.get(i).getNm().equalsIgnoreCase(nm)) {
+            tandaADA = 1;
+            datake = i;
+        }
+    }
+    if (tandaADA > 0) {
+        Model barang = new Model();
+        barang = lst.get(datake);
+        System.out.println("Barang yang anda inginkan ada ");
+        shortline();
+        System.out.println("\tDATA BARANG");
+        shortline();
+        System.out.println("|" + " Nama Barang     : " + barang.getNm());
+        System.out.println("|" + " Harga Satuan    : Rp. " + lst.get(datake).getHg());
+        System.out.println("|" + " Stok Barang     : " + lst.get(datake).getStok());
+        longline();
+        longline();
+    } else {
+        System.out.println("Barang tidak ditemukan");
+        longline();
+        longline();
+    }
+    repeatsearch();
+}</code></pre>
+                <span class="fw-medium">4. Fungsi buy</span>
+                <p>fungsi buy ini seperti program kasir pada umumnya, saat user memasukkan barang yang akan dibeli oleh
+                    pelanggan otomatis harga satuan dari barang akan bertambah sesuai jumlah barang yang dibeli dan stok
+                    barang akan otomatis berkurang sesuai jumlah barang yang dibeli juga.</p>
+                <p>Namun, apabila user menginput nama barang yang salah atau tidak ada pada data Arraylist maka fungsi
+                    akan mengeluarkan output "Barang tidak ditemukan" dan jika user menginputkan jumlah barang yang
+                    tidak sesuai stok barang fungsi akan mengeluarkan output "Stok Barang habis".</p>
+                <pre class="border my-4"><code class="language-java">//Function Buy
+static void buy() throws AWTException {
+    longline();
+    System.out.println("\tSELAMAT DATANG DI TOKO KELONTONG");
+    longline();
+    Scanner input = new Scanner(System.in).useDelimiter("\n");
+    int tandaADA = 0;
+    int datake = 0;
+    System.out.print("Masukan Nama Barang : ");
+    String nm = input.next();
+    for (int i = 0; i < lst.size(); i++) {
+        if (lst.get(i).getNm().equalsIgnoreCase(nm)) {
+            tandaADA = 1;
+            datake = i;
+        }
+    }
+    if (lst.get(datake).getStok() > 0) {
+        if (tandaADA > 0) {
+            Model barang = new Model();
+            barang = lst.get(datake);
+            System.out.println("Barang yang anda inginkan ada ");
+            shortline();
+            System.out.print("Banyak barang yang anda inginkan : ");
+            int banyak = input.nextInt();
+            if (banyak > lst.get(datake).getStok()) {
+                System.out.println("Pembelian Melebihi Stok Barang");
+                longline();
+                longline();
+            } else {
+                shortline();
+                System.out.println("\tDATA BARANG");
+                shortline();
+                System.out.println("|" + " Nama Barang     : " + barang.getNm());
+                System.out.println("|" + " Harga Satuan    : Rp. " + lst.get(datake).getHg());
+                int hn = barang.hg;
+                System.out.println("|" + " Total Harga     : Rp. " + (hn * banyak));
+                longline();
+                longline();
+                int stk = lst.get(datake).getStok() - banyak;
+                System.out.println("|" + " Sisa Stok       : " + stk);
+                barang.setStok(stk);
+                longline();
+                longline();
+            }
+        } else {
+            System.out.println("Barang tidak ditemukan");
+            longline();
+            longline();
+        }
+    } else {
+        System.out.println("Stok Barang habis");
+        longline();
+        longline();
+    }
+
+    repeatbuy();
+}</code></pre>
+                <span class="fw-medium">5. Fungsi repeat</span>
+                <p>fungsi repeat ini ada tiga (repeatinput, repeatsearch, repeatbuy) digunakan untuk mengulang tiga
+                    fungsi yang menjadi pilihan menu di fungsi menu.</p>
+                <pre class="border my-4"><code class="language-java">//Function Mengulang Input Barang
+static void repeatinput() throws AWTException {
+    Scanner input = new Scanner(System.in);
+    System.out.print("Apakah anda ingin input barang kembali ? Ya(y) / Tidak (n) : ");
+    String lanjut = input.next();
+    if (lanjut.equals("y")) {
+        clear();
+        input();
+    } else {
+        clear();
+        menu();
+    }
+}
+
+//Function Mengulang Pencarian Barang
+static void repeatsearch() throws AWTException {
+    Scanner input = new Scanner(System.in);
+    System.out.print("Anda ingin mencari lagi ? Ya(y) / Tidak(n) : ");
+    String tambah = input.next();
+    if (tambah.equals("y")) {
+        clear();
+        datasearch();
+    } else {
+        clear();
+        menu();
+    }
+}
+
+//Function Mengulang Pembelian Barang
+static void repeatbuy() throws AWTException {
+    Scanner input = new Scanner(System.in);
+    System.out.print("Anda ingin membeli lagi ? Ya(y) / Tidak(n) : ");
+    String tambah = input.next();
+    if (tambah.equals("y")) {
+        clear();
+        buy();
+    } else {
+        clear();
+        menu();
+    }
+}</code></pre>
+                <span class="fw-medium">6. Fungsi tambahan</span>
+                <p>fungsi tambahan ini digunakan agar saat program dijalankan mengeluarkan output yang rapi dan enak
+                    dilihat.</p>
+                <pre class="border my-4"><code class="language-java">//Function Stop
+static void stop() {
+    shortline();
+    System.out.println("\tTerima Kasih");
+    shortline();
+}
+
+//Function Garis Pendek
+static void shortline() {
+    for (int g = 0; g < 30; g++) {
+        System.out.print("=");
+    }
+    System.out.println("");
+}
+
+//Function Garis Panjang
+static void longline() {
+    for (int g = 0; g < 50; g++) {
+        System.out.print("=");
+    }
+    System.out.println("");
+}
+
+//Function clear
+static void clear() throws AWTException {
+    Robot pressrob = new Robot();
+    try {
+        pressrob.keyPress(KeyEvent.VK_CONTROL); // press "CTRL"
+        pressrob.keyPress(KeyEvent.VK_L); // press "L"
+        pressrob.keyRelease(KeyEvent.VK_L); // unpress "L"
+        pressrob.keyRelease(KeyEvent.VK_CONTROL); // unpress "CTRL"
+        Thread.sleep(1000); // add delay in milisecond, if not there will automatically stop after clear
+    } catch (InterruptedException e) {
+    }
+}</code></pre>
+                <span class="fw-medium">7. Fungsi Utama (public static void main(String[] args))</span>
+                <p>Fungsi main ini sangatlah penting untuk menjalanlan fungsi yang lain.</p>
+                <pre class="border my-4"><code class="language-java">public static void main(String[] args) throws AWTException {
+    lst = new ArrayList&lt;Model&gt;();
+    menu();
+}</code></pre>
+                <h3 class="my-4">Code secara keseluruhan</h3>
+                <pre class="border my-4"><code class="language-java">public class TokoKelontong {
+
+    static ArrayList<Model> lst;
+
+    //Function Menu
+    static void menu() throws AWTException {
+        Scanner input = new Scanner(System.in);
+        shortline();
+        System.out.println("\t----- MENU -----");
+        shortline();
+        System.out.println("1. Input Barang");
+        System.out.println("2. Menampilkan Data Barang");
+        System.out.println("3. Membeli Barang");
+        System.out.println("4. Exit");
+        System.out.print("Masukkan Pilihan : ");
+        int pilihan = input.nextInt();
+        switch (pilihan) {
+            case 1: {
+                clear();
+                input();
+            }
+            break;
+            case 2: {
+                clear();
+                datasearch();
+            }
+            break;
+            case 3: {
+                clear();
+                buy();
+            }
+            break;
+            case 4: {
+                stop();
+            }
+        }
+    }
+
+    //Function Input Barang
+    static void input() throws AWTException {
+        Scanner input = new Scanner(System.in).useDelimiter("\n");
+        shortline();
+        System.out.println("\tINPUT BARANG");
+        shortline();
+        System.out.print("Masukkan banyak barang = ");
+        int data = input.nextInt();
+        for (int a = 1; a <= data; a++) {
+            Model barang = new Model();
+            shortline();
+            System.out.println("\tBARANG KE-" + a + "");
+            System.out.print("Masukkan Nama Barang = ");
+            barang.setNm(input.next());
+            System.out.print("Masukkan Harga Barang = Rp. ");
+            barang.setHg(input.nextInt());
+            System.out.print("Masukkan Stok Barang = ");
+            barang.setStok(input.nextInt());
+            lst.add(barang);
+        }
+        longline();
+        longline();
+        repeatinput();
+    }
+
+    //Function Pencarian Barang
+    static void datasearch() throws AWTException {
+        longline();
+        System.out.println("\tSELAMAT DATANG DI TOKO KELONTONG");
+        longline();
+        Scanner input = new Scanner(System.in).useDelimiter("\n");
+        int tandaADA = 0;
+        int datake = 0;
+        System.out.print("Masukan Nama Barang : ");
+        String nm = input.next();
+        for (int i = 0; i < lst.size(); i++) {
+            if (lst.get(i).getNm().equalsIgnoreCase(nm)) {
+                tandaADA = 1;
+                datake = i;
+            }
+        }
+        if (tandaADA > 0) {
+            Model barang = new Model();
+            barang = lst.get(datake);
+            System.out.println("Barang yang anda inginkan ada ");
+            shortline();
+            System.out.println("\tDATA BARANG");
+            shortline();
+            System.out.println("|" + " Nama Barang     : " + barang.getNm());
+            System.out.println("|" + " Harga Satuan    : Rp. " + lst.get(datake).getHg());
+            System.out.println("|" + " Stok Barang     : " + lst.get(datake).getStok());
+            longline();
+            longline();
+        } else {
+            System.out.println("Barang tidak ditemukan");
+            longline();
+            longline();
+        }
+        repeatsearch();
+    }
+
+    //Function Mengulang Input Barang
+    static void repeatinput() throws AWTException {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Apakah anda ingin input barang kembali ? Ya(y) / Tidak (n) : ");
+        String lanjut = input.next();
+        if (lanjut.equals("y")) {
+            clear();
+            input();
+        } else {
+            clear();
+            menu();
+        }
+    }
+
+    //Function Mengulang Pencarian Barang
+        static void repeatsearch() throws AWTException {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Anda ingin mencari lagi ? Ya(y) / Tidak(n) : ");
+        String tambah = input.next();
+        if (tambah.equals("y")) {
+            clear();
+            datasearch();
+        } else {
+            clear();
+            menu();
+        }
+    }
+
+    //Function Mengulang Pembelian Barang
+    static void repeatbuy() throws AWTException {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Anda ingin membeli lagi ? Ya(y) / Tidak(n) : ");
+        String tambah = input.next();
+        if (tambah.equals("y")) {
+            clear();
+            buy();
+        } else {
+            clear();
+            menu();
+        }
+    }
+
+    //Function Stop
+    static void stop() {
+        shortline();
+        System.out.println("\tTerima Kasih");
+        shortline();
+    }
+
+    //Function Garis Pendek
+    static void shortline() {
+        for (int g = 0; g < 30; g++) {
+            System.out.print("=");
+        }
+        System.out.println("");
+    }
+
+    //Function Garis Panjang
+    static void longline() {
+        for (int g = 0; g < 50; g++) {
+            System.out.print("=");
+        }
+        System.out.println("");
+    }
+
+    //Function Buy
+    static void buy() throws AWTException {
+        longline();
+        System.out.println("\tSELAMAT DATANG DI TOKO KELONTONG");
+        longline();
+        Scanner input = new Scanner(System.in).useDelimiter("\n");
+        int tandaADA = 0;
+        int datake = 0;
+        System.out.print("Masukan Nama Barang : ");
+        String nm = input.next();
+        for (int i = 0; i < lst.size(); i++) {
+            if (lst.get(i).getNm().equalsIgnoreCase(nm)) {
+                tandaADA = 1;
+                datake = i;
+            }
+        }
+        if (lst.get(datake).getStok() > 0) {
+            if (tandaADA > 0) {
+                Model barang = new Model();
+                barang = lst.get(datake);
+                System.out.println("Barang yang anda inginkan ada ");
+                shortline();
+                System.out.print("Banyak barang yang anda inginkan : ");
+                int banyak = input.nextInt();
+                if (banyak > lst.get(datake).getStok()) {
+                    System.out.println("Pembelian Melebihi Stok Barang");
+                    longline();
+                    longline();
+                } else {
+                    shortline();
+                    System.out.println("\tDATA BARANG");
+                    shortline();
+                    System.out.println("|" + " Nama Barang     : " + barang.getNm());
+                    System.out.println("|" + " Harga Satuan    : Rp. " + lst.get(datake).getHg());
+                    int hn = barang.hg;
+                    System.out.println("|" + " Total Harga     : Rp. " + (hn * banyak));
+                    longline();
+                    longline();
+                    int stk = lst.get(datake).getStok() - banyak;
+                    System.out.println("|" + " Sisa Stok       : " + stk);
+                    barang.setStok(stk);
+                    longline();
+                    longline();
+                }
+            } else {
+                System.out.println("Barang tidak ditemukan");
+                longline();
+                longline();
+            }
+        } else {
+            System.out.println("Stok Barang habis");
+            longline();
+            longline();
+        }
+
+        repeatbuy();
+    }
+
+    //Function clear
+    static void clear() throws AWTException {
+        Robot pressrob = new Robot();
+        try {
+            pressrob.keyPress(KeyEvent.VK_CONTROL); // press "CTRL"
+            pressrob.keyPress(KeyEvent.VK_L); // press "L"
+            pressrob.keyRelease(KeyEvent.VK_L); // unpress "L"
+            pressrob.keyRelease(KeyEvent.VK_CONTROL); // unpress "CTRL"
+            Thread.sleep(1000); // add delay in milisecond, if not there will automatically stop after clear
+        } catch (InterruptedException e) {
+        }
+    }
+
+    public static void main(String[] args) throws AWTException {
+        lst = new ArrayList<Model>();
+        menu();
+    }
+}</code></pre>
+                <h3 class="my-4 text-center">Thanks for reading. create with ❤️</h3>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/languages/java.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+
+</html>
